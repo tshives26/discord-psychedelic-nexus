@@ -48,8 +48,8 @@
   --user-modal-attachment: var(--background-attachment); /* user modal background attachment [default: var(--background-attachment)] */
   --user-modal-filter: var(--background-filter); /* user modal background adjustments [default: var(--background-filter)] */
   
-  /* HOME ICON */
-  --home-icon: url("https://discord.com/assets/f9bb9c4af2b9c32a2c5ee0014661546d.png"); /* home button icon [default: Discord default] */
+  /* HOME ICON - Animated Psychedelic GIF */
+  --home-icon: url("https://i.imgur.com/7yZ8XKq.gif"); /* home button animated icon - psychedelic trippy effect [default: animated GIF] */
   --home-size: cover; /* home button icon size [default: cover] */
   
   /* FONTS */
