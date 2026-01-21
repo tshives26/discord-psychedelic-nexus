@@ -7,8 +7,8 @@
  * @website https://github.com/tshives26/discord-psychedelic-nexus
  */
 
-/* IMPORT CSS FROM GITHUB PAGES - AUTO-UPDATES */
-@import url("https://tshives26.github.io/discord-psychedelic-nexus/main.css");
+/* IMPORT CSS FROM GITHUB - AUTO-UPDATES */
+@import url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/main.css");
 
 /* SETTINGS - USER CUSTOMIZABLE VARIABLES */
 :root {
