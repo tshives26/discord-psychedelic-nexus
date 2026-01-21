@@ -1,0 +1,38 @@
+/**
+ * @name Psychedelic Nexus
+ * @author SummitByte
+ * @version 2.1.0
+ * @description A sharp, modern, premium psychedelic theme with vibrant colors, trippy effects, and fully customized UI elements. Fully readable with proper contrast.
+ * @source https://github.com/tshives26/discord-psychedelic-nexus
+ * @website https://github.com/tshives26/discord-psychedelic-nexus
+ */
+
+/* IMPORT CSS FROM GITHUB PAGES - AUTO-UPDATES */
+@import url("https://tshives26.github.io/discord-psychedelic-nexus/main.css");
+
+/* SETTINGS - USER CUSTOMIZABLE VARIABLES */
+:root {
+  /* ACCENT COLORS */
+  --nexus-purple: #9d4edd; /* main accent color (hex, rgb or hsl) [default: #9d4edd] */
+  --nexus-magenta: #c77dff; /* hover accent color (hex, rgb or hsl) [default: #c77dff] */
+  --nexus-pink: #ff006e; /* danger accent color (hex, rgb or hsl) [default: #ff006e] */
+  --nexus-cyan: #00f5ff; /* success accent color (hex, rgb or hsl) [default: #00f5ff] */
+  
+  /* STATUS COLORS */
+  --nexus-online-color: #00ff88; /* online status color [default: #00ff88] */
+  --nexus-idle-color: #ffbe0b; /* idle status color [default: #ffbe0b] */
+  --nexus-dnd-color: #ff006e; /* dnd status color [default: #ff006e] */
+  --nexus-streaming-color: #9d4edd; /* streaming status color [default: #9d4edd] */
+  --nexus-offline-color: #4a5568; /* offline/invisible status color [default: #4a5568] */
+  
+  /* APP BACKGROUND */
+  --nexus-bg-image: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/background-main.jpg"); /* app background image (link must be HTTPS) */
+  --nexus-bg-position: center; /* app background position [default: center] */
+  --nexus-bg-size: cover; /* app background size [default: cover] */
+  --nexus-bg-attachment: fixed; /* app background attachment [default: fixed] */
+  --nexus-bg-gradient: linear-gradient(135deg, #1a0033 0%, #000012 50%, #330066 100%); /* fallback gradient */
+  
+  /* GLOW EFFECTS */
+  --nexus-glow: 0 0 20px rgba(157, 78, 221, 0.6); /* glow effect [default: 0 0 20px rgba(157, 78, 221, 0.6)] */
+  --nexus-glow-strong: 0 0 30px rgba(157, 78, 221, 0.8); /* strong glow effect [default: 0 0 30px rgba(157, 78, 221, 0.8)] */
+}
