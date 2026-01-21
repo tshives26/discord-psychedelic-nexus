@@ -69,18 +69,8 @@
   --focus-color: var(--main-color); /* outline when pressing TAB key [default: var(--main-color)] */
 }
 
-/* THEME SPECIFIC SHADING - Psychedelic Dark Theme */
-:is(.theme-light, .theme-dark .theme-light) {
-  --background-shading: rgba(252, 252, 252, 0.3); /* app background shading color [default: rgba(252, 252, 252, 0.3)] */
-  --card-shading: rgba(252, 252, 252, 0.3); /* cards background shading color [default: rgba(252, 252, 252, 0.3)] */
-  --popout-shading: rgba(252, 252, 252, 0.7); /* popouts background shading color [default: rgba(252, 252, 252, 0.7)] */
-  --modal-shading: rgba(252, 252, 252, 0.5); /* modals background shading color [default: rgba(252, 252, 252, 0.5)] */
-  --input-shading: rgba(0, 0, 0, 0.3); /* inputs background shading color [default: rgba(0, 0, 0, 0.3)] */
-  --normal-text: #ffffff; /* text color - bright for readability [default: #ffffff] */
-  --muted-text: rgba(255, 255, 255, 0.8); /* muted text color [default: rgba(255, 255, 255, 0.8)] */
-}
-
-/* DARK THEME - Psychedelic */
+/* DARK THEME VARIANTS - Users can switch in Discord Settings > Appearance > Theme */
+/* DARK THEME - Psychedelic (Standard Dark) */
 :is(.theme-dark, .theme-light .theme-dark) {
   --background-shading: rgba(0, 0, 0, 0.6); /* app background shading color - darker for trippy effect [default: rgba(0, 0, 0, 0.6)] */
   --card-shading: rgba(0, 0, 0, 0.4); /* cards background shading color [default: rgba(0, 0, 0, 0.4)] */
@@ -112,5 +102,8 @@
   --normal-text: #ffffff; /* text color - bright for readability [default: #ffffff] */
   --muted-text: rgba(255, 255, 255, 0.85); /* muted text color [default: rgba(255, 255, 255, 0.85)] */
 }
+
+/* NOTE: Users can switch between Dark, Darker, and Midnight themes in Discord Settings > Appearance > Theme */
+/* Light theme support removed - Psychedelic Nexus is designed for dark themes only */
 
 /* ADD ADDITIONAL PSYCHEDELIC CSS BELOW HERE */
