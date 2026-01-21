@@ -1,7 +1,7 @@
 /**
  * @name Psychedelic Nexus
  * @author SummitByte
- * @version 2.2.0
+ * @version 1.0.0
  * @description A sharp, modern, premium psychedelic theme with vibrant colors, trippy effects, and fully customized UI elements. Built on ClearVision framework.
  * @source https://github.com/tshives26/discord-psychedelic-nexus
  * @website https://github.com/tshives26/discord-psychedelic-nexus
@@ -28,28 +28,28 @@
   
   /* APP BACKGROUND - Psychedelic Gradient */
   --background-shading-percent: 100%; /* app background shading amount [default: 100%] */
-  --background-image: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/background-main.jpg?v=2.2.0"); /* app background image (link must be HTTPS) */
+  --background-image: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/background-main.jpg?v=1.0.0"); /* app background image (link must be HTTPS) */
   --background-position: center; /* app background position [default: center] */
   --background-size: cover; /* app background size [default: cover] */
   --background-attachment: fixed; /* app background attachment [default: fixed] */
   --background-filter: saturate(1.5) brightness(0.9) contrast(1.1); /* psychedelic filter effects */
   
   /* USER POPOUT BACKGROUND */
-  --user-popout-image: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/background-main.jpg?v=2.2.0"); /* user popout background image [default: var(--background-image)] */
+  --user-popout-image: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/background-main.jpg?v=1.0.0"); /* user popout background image [default: var(--background-image)] */
   --user-popout-position: var(--background-position); /* user popout position [default: var(--background-position)] */
   --user-popout-size: var(--background-size); /* user popout size [default: var(--background-size)] */
   --user-popout-attachment: var(--background-attachment); /* user popout background attachment [default: var(--background-attachment)] */
   --user-popout-filter: var(--background-filter); /* user popout background adjustments [default: var(--background-filter)] */
   
   /* USER MODAL BACKGROUND */
-  --user-modal-image: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/background-main.jpg?v=2.2.0"); /* user modal background image [default: var(--background-image)] */
+  --user-modal-image: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/background-main.jpg?v=1.0.0"); /* user modal background image [default: var(--background-image)] */
   --user-modal-position: var(--background-position); /* user modal position [default: var(--background-position)] */
   --user-modal-size: var(--background-size); /* user modal size [default: var(--background-size)] */
   --user-modal-attachment: var(--background-attachment); /* user modal background attachment [default: var(--background-attachment)] */
   --user-modal-filter: var(--background-filter); /* user modal background adjustments [default: var(--background-filter)] */
   
   /* HOME ICON - Animated Psychedelic GIF */
-  --home-icon: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/avatar2.gif?v=2.2.0"); /* home button animated icon - psychedelic trippy effect [default: animated GIF] */
+  --home-icon: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/avatar2.gif?v=1.0.0"); /* home button animated icon - psychedelic trippy effect [default: animated GIF] */
   --home-size: cover; /* home button icon size [default: cover] */
   
   /* FONTS */
@@ -117,3 +117,18 @@
 /* NOTE: Users can switch between Light, Dark, Darker, and Midnight themes in Discord Settings > Appearance > Theme */
 
 /* ADD ADDITIONAL PSYCHEDELIC CSS BELOW HERE */
+
+/* Selected Channel Icons - Black for readability */
+[class*="channelSelected"] [class*="icon"],
+[class*="channelSelected"] svg,
+[class*="modeSelected"] [class*="icon"],
+[class*="modeSelected"] svg {
+  color: #000000 !important;
+}
+
+[class*="channelSelected"] [class*="icon"] path,
+[class*="modeSelected"] [class*="icon"] path,
+[class*="channelSelected"] svg path,
+[class*="modeSelected"] svg path {
+  fill: #000000 !important;
+}
