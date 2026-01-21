@@ -1,688 +1,116 @@
 /**
  * @name Psychedelic Nexus
  * @author SummitByte
- * @version 2.1.0
- * @description A sharp, modern, premium psychedelic theme with vibrant colors, trippy effects, and fully customized UI elements. Fully readable with proper contrast.
+ * @version 2.2.0
+ * @description A sharp, modern, premium psychedelic theme with vibrant colors, trippy effects, and fully customized UI elements. Built on ClearVision framework.
  * @source https://github.com/tshives26/discord-psychedelic-nexus
  * @website https://github.com/tshives26/discord-psychedelic-nexus
  */
 
-/* ============================================
-   THEME VARIABLES - CUSTOM CONFIGURATION
-   ============================================ */
+/* IMPORT CSS - Using ClearVision framework */
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/betterdiscord.css");
+
+/* SETTINGS - PSYCHEDELIC CUSTOMIZATION */
 :root {
-  /* Psychedelic Color Palette */
-  --nexus-purple: #9d4edd;
-  --nexus-magenta: #c77dff;
-  --nexus-pink: #ff006e;
-  --nexus-cyan: #00f5ff;
-  --nexus-blue: #4facfe;
-  --nexus-green: #00ff88;
+  /* ACCENT COLORS - Psychedelic Palette */
+  --main-color: #9d4edd; /* Electric Purple - main accent color [default: #9d4edd] */
+  --hover-color: #c77dff; /* Bright Magenta - hover accent color [default: #c77dff] */
+  --success-color: #00ff88; /* Neon Green - positive accent color [default: #00ff88] */
+  --danger-color: #ff006e; /* Hot Pink - danger accent color [default: #ff006e] */
   
-  /* Background Images - Use variable from theme file */
-  /* Glow Effects - Use variables from theme file */
-}
-
-/* ============================================
-   DISCORD VARIABLE OVERRIDES - DARK THEME
-   ============================================ */
-.theme-dark {
-  /* Primary Backgrounds - Dark with transparency for readability */
-  --background-primary: rgba(10, 0, 20, 0.95);
-  --background-secondary: rgba(26, 0, 51, 0.9);
-  --background-secondary-alt: rgba(51, 0, 102, 0.85);
-  --background-tertiary: rgba(77, 0, 153, 0.8);
-  --background-accent: rgba(157, 78, 221, 0.3);
-  --background-floating: rgba(0, 0, 18, 0.98);
-  --background-mobile-primary: rgba(10, 0, 20, 0.95);
-  --background-mobile-secondary: rgba(26, 0, 51, 0.9);
+  /* STATUS COLORS - Neon Variants */
+  --online-color: #00ff88; /* Neon Green [default: #00ff88] */
+  --idle-color: #ffbe0b; /* Electric Yellow [default: #ffbe0b] */
+  --dnd-color: #ff006e; /* Hot Pink [default: #ff006e] */
+  --streaming-color: #9d4edd; /* Electric Purple [default: #9d4edd] */
+  --offline-color: #4a5568; /* Dark Gray [default: #4a5568] */
   
-  /* Modifier Backgrounds */
-  --background-modifier-hover: rgba(157, 78, 221, 0.25);
-  --background-modifier-active: rgba(199, 125, 255, 0.35);
-  --background-modifier-selected: rgba(157, 78, 221, 0.4);
-  --background-modifier-accent: rgba(157, 78, 221, 0.2);
+  /* APP BACKGROUND - Psychedelic Gradient */
+  --background-shading-percent: 100%; /* app background shading amount [default: 100%] */
+  --background-image: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/background-main.jpg"); /* app background image (link must be HTTPS) */
+  --background-position: center; /* app background position [default: center] */
+  --background-size: cover; /* app background size [default: cover] */
+  --background-attachment: fixed; /* app background attachment [default: fixed] */
+  --background-filter: saturate(1.5) brightness(0.9) contrast(1.1); /* psychedelic filter effects */
   
-  /* Text Colors - HIGH CONTRAST for readability */
-  --text-normal: #ffffff;
-  --text-muted: rgba(255, 255, 255, 0.85);
-  --text-link: #c77dff;
-  --text-link-low-saturation: #c77dff;
-  --text-positive: #00ff88;
-  --text-warning: #ffbe0b;
-  --text-danger: #ff006e;
-  --text-brand: #9d4edd;
+  /* USER POPOUT BACKGROUND */
+  --user-popout-image: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/background-main.jpg"); /* user popout background image [default: var(--background-image)] */
+  --user-popout-position: var(--background-position); /* user popout position [default: var(--background-position)] */
+  --user-popout-size: var(--background-size); /* user popout size [default: var(--background-size)] */
+  --user-popout-attachment: var(--background-attachment); /* user popout background attachment [default: var(--background-attachment)] */
+  --user-popout-filter: var(--background-filter); /* user popout background adjustments [default: var(--background-filter)] */
   
-  /* Interactive Text */
-  --interactive-normal: rgba(255, 255, 255, 0.9);
-  --interactive-hover: #ffffff;
-  --interactive-active: #c77dff;
-  --interactive-muted: rgba(255, 255, 255, 0.7);
+  /* USER MODAL BACKGROUND */
+  --user-modal-image: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/background-main.jpg"); /* user modal background image [default: var(--background-image)] */
+  --user-modal-position: var(--background-position); /* user modal position [default: var(--background-position)] */
+  --user-modal-size: var(--background-size); /* user modal size [default: var(--background-size)] */
+  --user-modal-attachment: var(--background-attachment); /* user modal background attachment [default: var(--background-attachment)] */
+  --user-modal-filter: var(--background-filter); /* user modal background adjustments [default: var(--background-filter)] */
   
-  /* Header Colors */
-  --header-primary: #ffffff;
-  --header-secondary: rgba(255, 255, 255, 0.85);
+  /* HOME ICON */
+  --home-icon: url("https://discord.com/assets/f9bb9c4af2b9c32a2c5ee0014661546d.png"); /* home button icon [default: Discord default] */
+  --home-size: cover; /* home button icon size [default: cover] */
   
-  /* Brand Colors */
-  --brand-500: #9d4edd;
-  --brand-560: #c77dff;
-  --brand-600: #e0aaff;
+  /* FONTS */
+  --main-font: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif; /* main font for app [default: gg sans, Helvetica Neue, Helvetica, Arial, sans-serif] */
+  --code-font: Consolas, "gg mono", "Liberation Mono", Menlo, Courier, monospace; /* font for codeblocks [default: Consolas, Liberation Mono, Menlo, Courier, monospace] */
   
-  /* Status Colors */
-  --status-online: #00ff88;
-  --status-idle: #ffbe0b;
-  --status-dnd: #ff006e;
-  --status-streaming: #9d4edd;
-  --status-offline: #4a5568;
-  --status-invisible: #4a5568;
+  /* CHANNEL COLORS */
+  --channel-normal: var(--interactive-text-default); /* channel text color [default: var(--interactive-text-default)] */
+  --channel-muted: var(--interactive-muted); /* muted channel text color [default: var(--interactive-muted)] */
+  --channel-hover: var(--interactive-text-hover); /* hovered channel text color [default: var(--interactive-text-hover)] */
+  --channel-selected: var(--interactive-text-active); /* selected channel text color [default: var(--interactive-text-active)] */
+  --channel-selected-bg: var(--main-color); /* selected channel background [default: var(--main-color)] */
+  --channel-unread: var(--main-color); /* unread channel text color [default: var(--main-color)] */
+  --channel-unread-hover: var(--hover-color); /* unread channel hover color [default: var(--hover-color)] */
   
-  /* Button Colors */
-  --button-danger-background: #ff006e;
-  --button-danger-background-hover: #ff1a7a;
-  --button-danger-background-active: #e60063;
-  --button-secondary-background: rgba(157, 78, 221, 0.25);
-  --button-secondary-background-hover: rgba(199, 125, 255, 0.35);
-  --button-outline-brand-border: #9d4edd;
-  --button-outline-brand-background: transparent;
-  --button-outline-brand-background-hover: rgba(157, 78, 221, 0.15);
-  --button-outline-brand-text: #9d4edd;
-  --button-outline-brand-text-hover: #c77dff;
-  
-  /* Input Colors */
-  --input-background: rgba(0, 0, 0, 0.5);
-  --input-placeholder-text: rgba(255, 255, 255, 0.6);
-  
-  /* Scrollbar Colors */
-  --scrollbar-thin-thumb: rgba(157, 78, 221, 0.7);
-  --scrollbar-thin-track: rgba(0, 0, 0, 0.3);
-  --scrollbar-auto-thumb: rgba(157, 78, 221, 0.7);
-  --scrollbar-auto-track: rgba(0, 0, 0, 0.4);
-  
-  /* Channel Text Area */
-  --channel-text-area-placeholder: rgba(255, 255, 255, 0.5);
-}
-
-/* ============================================
-   BACKGROUND WITH IMAGE & OVERLAY
-   ============================================ */
-.appMount_fae9dd,
-#app-mount,
-body {
-  background: var(--nexus-bg-gradient), var(--nexus-bg-image) !important;
-  background-size: cover, cover !important;
-  background-position: center, center !important;
-  background-attachment: fixed, fixed !important;
-  background-blend-mode: overlay, normal !important;
-  position: relative !important;
-}
-
-/* Dark overlay to ensure text readability */
-.appMount_fae9dd::before,
-#app-mount::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Ensure all content is above overlay */
-.appMount_fae9dd > *,
-#app-mount > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* ============================================
-   ANIMATIONS
-   ============================================ */
-@keyframes nexusPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.9; }
-}
-
-@keyframes nexusGlow {
-  0%, 100% { box-shadow: 0 0 15px rgba(157, 78, 221, 0.6); }
-  50% { box-shadow: 0 0 25px rgba(199, 125, 255, 0.8); }
-}
-
-/* ============================================
-   SCROLLBARS - CUSTOM STYLING
-   ============================================ */
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.4) !important;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #9d4edd, #c77dff) !important;
-  border-radius: 6px;
-  border: 2px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 10px rgba(157, 78, 221, 0.5);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #c77dff, #ff006e) !important;
-  box-shadow: 0 0 15px rgba(157, 78, 221, 0.8);
-}
-
-/* ============================================
-   GUILD LIST (SERVER LIST)
-   ============================================ */
-[class*="guilds"],
-[class*="guilds"] > [class*="scroller"] {
-  background: rgba(0, 0, 0, 0.6) !important;
-  backdrop-filter: blur(10px) saturate(150%) !important;
-  border-right: 2px solid rgba(157, 78, 221, 0.4) !important;
-}
-
-[class*="guild"] [class*="wrapper"] {
-  border-radius: 12px !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  border: 2px solid transparent !important;
-}
-
-[class*="guild"] [class*="wrapper"]:hover {
-  border-color: var(--nexus-purple) !important;
-  transform: scale(1.1) translateY(-3px) !important;
-  box-shadow: var(--nexus-glow) !important;
-}
-
-[class*="guild"][aria-selected="true"] [class*="wrapper"],
-[class*="guild"][aria-current="true"] [class*="wrapper"] {
-  border-color: var(--nexus-purple) !important;
-  box-shadow: var(--nexus-glow) !important;
-  background: rgba(157, 78, 221, 0.25) !important;
-}
-
-/* ============================================
-   CHANNEL LIST - READABLE TEXT
-   ============================================ */
-[class*="sidebar"],
-[class*="sidebarRegion"],
-[class*="channels"] {
-  background: rgba(10, 0, 20, 0.85) !important;
-  backdrop-filter: blur(15px) saturate(150%) !important;
-  border-right: 1px solid rgba(157, 78, 221, 0.3) !important;
-}
-
-/* Channel Categories - Bright, readable text */
-[class*="containerDefault"],
-[class*="name"] {
-  color: #c77dff !important;
-  text-transform: uppercase !important;
-  font-weight: 700 !important;
-  letter-spacing: 1px !important;
-  text-shadow: 0 0 10px rgba(199, 125, 255, 0.8) !important;
-}
-
-/* Individual Channels - High contrast */
-[class*="channel"],
-[class*="channelLink"],
-[class*="link"] {
-  border-radius: 6px !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  margin: 2px 8px !important;
-  padding: 6px 8px !important;
-  color: rgba(255, 255, 255, 0.9) !important;
-}
-
-[class*="channel"]:hover,
-[class*="channelLink"]:hover {
-  background: rgba(157, 78, 221, 0.3) !important;
-  transform: translateX(5px) !important;
-  color: #ffffff !important;
-}
-
-[class*="channel"][aria-selected="true"],
-[class*="channelLink"][aria-selected="true"],
-[class*="channel"][class*="selected"] {
-  background: rgba(157, 78, 221, 0.5) !important;
-  border-left: 3px solid var(--nexus-purple) !important;
-  box-shadow: var(--nexus-glow) !important;
-  color: #ffffff !important;
-  font-weight: 600 !important;
-}
-
-[class*="channel"][class*="unread"] {
-  color: #c77dff !important;
-  font-weight: 600 !important;
-}
-
-/* ============================================
-   MESSAGE AREA - READABLE TEXT
-   ============================================ */
-[class*="chat"],
-[class*="content"],
-[class*="messages"] {
-  background: transparent !important;
-}
-
-[class*="message"],
-[class*="messageGroup"] {
-  border-radius: 10px !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  padding: 8px 12px !important;
-  margin: 4px 0 !important;
-}
-
-[class*="message"]:hover {
-  background: rgba(157, 78, 221, 0.15) !important;
-  transform: translateX(3px) !important;
-}
-
-/* Message Username - Bright, readable */
-[class*="username"],
-[class*="author"],
-[class*="usernameContainer"] {
-  color: #c77dff !important;
-  font-weight: 600 !important;
-  text-shadow: 0 0 8px rgba(199, 125, 255, 0.6) !important;
-}
-
-/* Message Content - White for readability */
-[class*="messageContent"],
-[class*="content"] {
-  color: #ffffff !important;
-}
-
-[class*="timestamp"] {
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-
-/* Embeds */
-[class*="embed"],
-[class*="embedWrapper"] {
-  background: rgba(0, 0, 0, 0.5) !important;
-  border-left: 4px solid var(--nexus-purple) !important;
-  border-radius: 10px !important;
-  backdrop-filter: blur(10px) !important;
-  color: #ffffff !important;
-}
-
-/* Code Blocks */
-code,
-pre,
-[class*="codeBlock"],
-[class*="markup"] {
-  background: rgba(0, 0, 0, 0.7) !important;
-  border: 1px solid rgba(157, 78, 221, 0.5) !important;
-  border-radius: 6px !important;
-  color: #ffffff !important;
-  padding: 8px !important;
-}
-
-/* ============================================
-   MESSAGE INPUT - READABLE
-   ============================================ */
-[class*="channelTextArea"],
-[class*="slateTextArea"],
-[class*="scrollableContainer"] {
-  background: rgba(0, 0, 0, 0.6) !important;
-  backdrop-filter: blur(15px) saturate(150%) !important;
-  border-radius: 16px !important;
-  border: 2px solid rgba(157, 78, 221, 0.4) !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-[class*="channelTextArea"]:focus-within,
-[class*="slateTextArea"]:focus-within {
-  border-color: var(--nexus-purple) !important;
-  box-shadow: var(--nexus-glow-strong) !important;
-}
-
-[class*="slateTextArea"] > textarea,
-[class*="channelTextArea"] textarea,
-textarea {
-  color: #ffffff !important;
-  background: transparent !important;
-}
-
-[class*="slateTextArea"] > textarea::placeholder,
-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.6) !important;
-}
-
-/* ============================================
-   MEMBER LIST - READABLE
-   ============================================ */
-[class*="members"],
-[class*="membersWrap"],
-[class*="membersGroup"] {
-  background: rgba(10, 0, 20, 0.85) !important;
-  backdrop-filter: blur(15px) saturate(150%) !important;
-  border-left: 1px solid rgba(157, 78, 221, 0.3) !important;
-}
-
-[class*="member"],
-[class*="memberInner"] {
-  border-radius: 6px !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  margin: 2px 8px !important;
-  padding: 4px 8px !important;
-  color: #ffffff !important;
-}
-
-[class*="member"]:hover,
-[class*="memberInner"]:hover {
-  background: rgba(157, 78, 221, 0.25) !important;
-}
-
-[class*="username"],
-[class*="memberName"],
-[class*="name"] {
-  color: #ffffff !important;
-}
-
-/* Status Indicators */
-[class*="status"],
-[class*="indicator"],
-[class*="presence"] {
-  filter: drop-shadow(0 0 6px currentColor) !important;
-  border: 2px solid rgba(0, 0, 0, 0.6) !important;
-}
-
-/* ============================================
-   BUTTONS - READABLE TEXT
-   ============================================ */
-button,
-[class*="button"],
-[role="button"] {
-  border-radius: 6px !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  border: 1px solid transparent !important;
-  color: #ffffff !important;
-  font-weight: 500 !important;
-}
-
-button:not([disabled]):hover,
-[class*="button"]:not([disabled]):hover {
-  transform: translateY(-2px) !important;
-  box-shadow: var(--nexus-glow) !important;
-}
-
-[class*="button"][class*="primary"],
-[class*="button"][class*="brand"] {
-  background: linear-gradient(135deg, #9d4edd, #c77dff) !important;
-  color: #ffffff !important;
-  border: none !important;
-}
-
-[class*="button"][class*="secondary"] {
-  background: rgba(157, 78, 221, 0.25) !important;
-  border: 1px solid rgba(157, 78, 221, 0.5) !important;
-  color: #ffffff !important;
-}
-
-[class*="button"][class*="danger"] {
-  background: var(--nexus-pink) !important;
-  color: #ffffff !important;
-}
-
-/* ============================================
-   INPUTS & FORMS - READABLE
-   ============================================ */
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-textarea,
-select {
-  background: rgba(0, 0, 0, 0.6) !important;
-  border: 2px solid rgba(157, 78, 221, 0.4) !important;
-  border-radius: 6px !important;
-  color: #ffffff !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  padding: 8px 12px !important;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: var(--nexus-purple) !important;
-  box-shadow: var(--nexus-glow) !important;
-  background: rgba(0, 0, 0, 0.7) !important;
-  color: #ffffff !important;
-  outline: none !important;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.6) !important;
-}
-
-/* ============================================
-   MODALS & POPOUTS - READABLE
-   ============================================ */
-[class*="modal"],
-[class*="modalRoot"],
-[class*="root"] {
-  backdrop-filter: blur(20px) saturate(150%) !important;
-}
-
-[class*="modalContent"],
-[class*="content"],
-[class*="inner"] {
-  background: rgba(0, 0, 0, 0.95) !important;
-  border: 2px solid rgba(157, 78, 221, 0.6) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), var(--nexus-glow) !important;
-  color: #ffffff !important;
-}
-
-[class*="modalHeader"],
-[class*="header"],
-[class*="title"] {
-  color: #c77dff !important;
-  text-shadow: 0 0 10px rgba(199, 125, 255, 0.8) !important;
-  font-weight: 700 !important;
-  border-bottom: 2px solid rgba(157, 78, 221, 0.4) !important;
-}
-
-/* ============================================
-   TOOLTIPS - READABLE
-   ============================================ */
-[class*="tooltip"],
-[class*="tooltipContent"] {
-  background: rgba(0, 0, 0, 0.98) !important;
-  border: 1px solid rgba(157, 78, 221, 0.7) !important;
-  border-radius: 6px !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), var(--nexus-glow) !important;
-  color: #ffffff !important;
-  backdrop-filter: blur(10px) !important;
-}
-
-/* ============================================
-   CONTEXT MENUS - READABLE
-   ============================================ */
-[class*="contextMenu"],
-[class*="menu"],
-[class*="itemGroup"] {
-  background: rgba(0, 0, 0, 0.98) !important;
-  border: 1px solid rgba(157, 78, 221, 0.6) !important;
-  border-radius: 10px !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), var(--nexus-glow) !important;
-  backdrop-filter: blur(15px) saturate(150%) !important;
-  color: #ffffff !important;
-}
-
-[class*="contextMenu"] [class*="item"],
-[class*="menu"] [class*="item"] {
-  border-radius: 6px !important;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  color: #ffffff !important;
-  margin: 2px 0 !important;
-}
-
-[class*="contextMenu"] [class*="item"]:hover,
-[class*="menu"] [class*="item"]:hover {
-  background: rgba(157, 78, 221, 0.4) !important;
-  color: #ffffff !important;
-}
-
-/* ============================================
-   NOTIFICATIONS & BADGES - READABLE
-   ============================================ */
-[class*="badge"],
-[class*="numberBadge"],
-[class*="unread"],
-[class*="mention"] {
-  background: linear-gradient(135deg, #ff006e, #9d4edd) !important;
-  border-radius: 10px !important;
-  box-shadow: 0 2px 10px rgba(255, 0, 110, 0.6) !important;
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  animation: nexusPulse 2s ease-in-out infinite !important;
-}
-
-/* ============================================
-   AVATARS
-   ============================================ */
-[class*="avatar"],
-img[class*="avatar"] {
-  border: 2px solid rgba(157, 78, 221, 0.6) !important;
-  border-radius: 50% !important;
-  box-shadow: 0 0 10px rgba(157, 78, 221, 0.5) !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-[class*="avatar"]:hover {
-  border-color: var(--nexus-purple) !important;
-  box-shadow: 0 0 20px rgba(157, 78, 221, 0.8) !important;
-  transform: scale(1.05) !important;
-}
-
-/* ============================================
-   VOICE CHANNELS
-   ============================================ */
-[class*="voice"],
-[class*="voiceState"] {
-  border-radius: 6px !important;
-  color: #ffffff !important;
-}
-
-[class*="voice"][class*="speaking"],
-[class*="voiceState"][class*="speaking"] {
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.8) !important;
-  border: 2px solid var(--nexus-green) !important;
-  background: rgba(0, 255, 136, 0.15) !important;
-}
-
-/* ============================================
-   SEARCH BAR - READABLE
-   ============================================ */
-[class*="search"],
-[class*="searchBar"],
-[class*="container"] input[type="search"] {
-  background: rgba(0, 0, 0, 0.6) !important;
-  border: 2px solid rgba(157, 78, 221, 0.4) !important;
-  border-radius: 10px !important;
-  color: #ffffff !important;
-}
-
-[class*="search"]:focus-within,
-[class*="searchBar"]:focus-within {
-  border-color: var(--nexus-purple) !important;
-  box-shadow: var(--nexus-glow) !important;
-}
-
-/* ============================================
-   SELECTION & TEXT
-   ============================================ */
-::selection {
-  background: rgba(157, 78, 221, 0.5) !important;
-  color: #ffffff !important;
-}
-
-::-moz-selection {
-  background: rgba(157, 78, 221, 0.5) !important;
-  color: #ffffff !important;
-}
-
-/* ============================================
-   FOCUS STATES
-   ============================================ */
-*:focus {
-  outline: 2px solid var(--nexus-purple) !important;
-  outline-offset: 2px !important;
-}
-
-*:focus:not(:focus-visible) {
-  outline: none !important;
-}
-
-/* ============================================
-   ADDITIONAL ELEMENTS - ALL READABLE
-   ============================================ */
-
-/* Reactions */
-[class*="reaction"],
-[class*="reactionBtn"] {
-  border: 1px solid rgba(157, 78, 221, 0.5) !important;
-  border-radius: 6px !important;
-  background: rgba(0, 0, 0, 0.5) !important;
-  color: #ffffff !important;
-}
-
-[class*="reaction"]:hover {
-  border-color: var(--nexus-purple) !important;
-  background: rgba(157, 78, 221, 0.3) !important;
-  transform: scale(1.15) !important;
-}
-
-/* Activity Cards */
-[class*="activity"] {
-  background: rgba(0, 0, 0, 0.5) !important;
-  border-radius: 10px !important;
-  border: 1px solid rgba(157, 78, 221, 0.3) !important;
-  color: #ffffff !important;
-}
-
-/* Attachments */
-[class*="attachment"] {
-  border-radius: 10px !important;
-  border: 2px solid rgba(157, 78, 221, 0.4) !important;
-}
-
-/* Separators */
-[class*="divider"],
-hr {
-  background: linear-gradient(90deg, transparent, #9d4edd, transparent) !important;
-  height: 2px !important;
-  opacity: 0.6 !important;
-}
-
-/* Title Bar */
-[class*="titleBar"] {
-  background: rgba(0, 0, 0, 0.8) !important;
-  border-bottom: 2px solid rgba(157, 78, 221, 0.5) !important;
-  color: #ffffff !important;
-}
-
-/* Settings */
-[class*="settings"],
-[class*="settingsContent"] {
-  background: rgba(10, 0, 20, 0.95) !important;
-  color: #ffffff !important;
-}
-
-/* Ensure ALL text is readable */
-* {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* Override any dark text colors */
-[style*="color: rgb"],
-[style*="color:rgba"] {
-  color: #ffffff !important;
-}
+  /* ACCESSIBILITY */
+  --focus-color: var(--main-color); /* outline when pressing TAB key [default: var(--main-color)] */
+}
+
+/* THEME SPECIFIC SHADING - Psychedelic Dark Theme */
+:is(.theme-light, .theme-dark .theme-light) {
+  --background-shading: rgba(252, 252, 252, 0.3); /* app background shading color [default: rgba(252, 252, 252, 0.3)] */
+  --card-shading: rgba(252, 252, 252, 0.3); /* cards background shading color [default: rgba(252, 252, 252, 0.3)] */
+  --popout-shading: rgba(252, 252, 252, 0.7); /* popouts background shading color [default: rgba(252, 252, 252, 0.7)] */
+  --modal-shading: rgba(252, 252, 252, 0.5); /* modals background shading color [default: rgba(252, 252, 252, 0.5)] */
+  --input-shading: rgba(0, 0, 0, 0.3); /* inputs background shading color [default: rgba(0, 0, 0, 0.3)] */
+  --normal-text: #ffffff; /* text color - bright for readability [default: #ffffff] */
+  --muted-text: rgba(255, 255, 255, 0.8); /* muted text color [default: rgba(255, 255, 255, 0.8)] */
+}
+
+/* DARK THEME - Psychedelic */
+:is(.theme-dark, .theme-light .theme-dark) {
+  --background-shading: rgba(0, 0, 0, 0.6); /* app background shading color - darker for trippy effect [default: rgba(0, 0, 0, 0.6)] */
+  --card-shading: rgba(0, 0, 0, 0.4); /* cards background shading color [default: rgba(0, 0, 0, 0.4)] */
+  --popout-shading: rgba(0, 0, 0, 0.75); /* popouts background shading color [default: rgba(0, 0, 0, 0.75)] */
+  --modal-shading: rgba(0, 0, 0, 0.7); /* modals background shading color [default: rgba(0, 0, 0, 0.7)] */
+  --input-shading: rgba(0, 0, 0, 0.5); /* inputs background shading color [default: rgba(0, 0, 0, 0.5)] */
+  --normal-text: #ffffff; /* text color - bright for readability [default: #ffffff] */
+  --muted-text: rgba(255, 255, 255, 0.75); /* muted text color [default: rgba(255, 255, 255, 0.75)] */
+}
+
+/* DARKER THEME - Deep Psychedelic */
+:is(.theme-darker, .theme-light .theme-darker) {
+  --background-shading: rgba(0, 0, 0, 0.8); /* app background shading color - deep dark [default: rgba(0, 0, 0, 0.8)] */
+  --card-shading: rgba(0, 0, 0, 0.5); /* cards background shading color [default: rgba(0, 0, 0, 0.5)] */
+  --popout-shading: rgba(0, 0, 0, 0.85); /* popouts background shading color [default: rgba(0, 0, 0, 0.85)] */
+  --modal-shading: rgba(0, 0, 0, 0.8); /* modals background shading color [default: rgba(0, 0, 0, 0.8)] */
+  --input-shading: rgba(0, 0, 0, 0.6); /* inputs background shading color [default: rgba(0, 0, 0, 0.6)] */
+  --normal-text: #ffffff; /* text color - bright for readability [default: #ffffff] */
+  --muted-text: rgba(255, 255, 255, 0.8); /* muted text color [default: rgba(255, 255, 255, 0.8)] */
+}
+
+/* MIDNIGHT THEME - Ultra Dark Psychedelic */
+:is(.theme-midnight, .theme-light .theme-midnight) {
+  --background-shading: rgba(0, 0, 0, 0.9); /* app background shading color - ultra dark [default: rgba(0, 0, 0, 0.9)] */
+  --card-shading: rgba(0, 0, 0, 0.6); /* cards background shading color [default: rgba(0, 0, 0, 0.6)] */
+  --popout-shading: rgba(0, 0, 0, 0.95); /* popouts background shading color [default: rgba(0, 0, 0, 0.95)] */
+  --modal-shading: rgba(0, 0, 0, 0.9); /* modals background shading color [default: rgba(0, 0, 0, 0.9)] */
+  --input-shading: rgba(0, 0, 0, 0.7); /* inputs background shading color [default: rgba(0, 0, 0, 0.7)] */
+  --normal-text: #ffffff; /* text color - bright for readability [default: #ffffff] */
+  --muted-text: rgba(255, 255, 255, 0.85); /* muted text color [default: rgba(255, 255, 255, 0.85)] */
+}
+
+/* ADD ADDITIONAL PSYCHEDELIC CSS BELOW HERE */
