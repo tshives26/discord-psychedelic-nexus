@@ -7,9 +7,9 @@
  * @website https://github.com/tshives26/discord-psychedelic-nexus
  */
 
-/* IMPORT CSS - Using ClearVision framework */
-@import url("https://clearvision.github.io/ClearVision-v7/main.css");
-@import url("https://clearvision.github.io/ClearVision-v7/betterdiscord.css");
+/* IMPORT CSS - Psychedelic Nexus Framework */
+@import url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/main.css");
+@import url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/betterdiscord.css");
 
 /* SETTINGS - PSYCHEDELIC CUSTOMIZATION */
 :root {
