@@ -49,7 +49,8 @@
   --user-modal-filter: var(--background-filter); /* user modal background adjustments [default: var(--background-filter)] */
   
   /* HOME ICON - Animated Psychedelic GIF */
-  --home-icon: url("https://i.imgur.com/7yZ8XKq.gif"); /* home button animated icon - psychedelic trippy effect [default: animated GIF] */
+  /* Replace the URL below with your own animated GIF hosted on GitHub, Imgur, or similar */
+  --home-icon: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/home-icon.gif"); /* home button animated icon - psychedelic trippy effect [default: animated GIF] */
   --home-size: cover; /* home button icon size [default: cover] */
   
   /* FONTS */
@@ -69,7 +70,18 @@
   --focus-color: var(--main-color); /* outline when pressing TAB key [default: var(--main-color)] */
 }
 
-/* DARK THEME VARIANTS - Users can switch in Discord Settings > Appearance > Theme */
+/* THEME VARIANTS - Users can switch in Discord Settings > Appearance > Theme */
+/* LIGHT THEME - Psychedelic (Brighter variant) */
+:is(.theme-light, .theme-dark .theme-light) {
+  --background-shading: rgba(252, 252, 252, 0.3); /* app background shading color [default: rgba(252, 252, 252, 0.3)] */
+  --card-shading: rgba(252, 252, 252, 0.3); /* cards background shading color [default: rgba(252, 252, 252, 0.3)] */
+  --popout-shading: rgba(252, 252, 252, 0.7); /* popouts background shading color [default: rgba(252, 252, 252, 0.7)] */
+  --modal-shading: rgba(252, 252, 252, 0.5); /* modals background shading color [default: rgba(252, 252, 252, 0.5)] */
+  --input-shading: rgba(0, 0, 0, 0.3); /* inputs background shading color [default: rgba(0, 0, 0, 0.3)] */
+  --normal-text: #36363c; /* text color [default: #36363c] */
+  --muted-text: #75757e; /* muted text color [default: #75757e] */
+}
+
 /* DARK THEME - Psychedelic (Standard Dark) */
 :is(.theme-dark, .theme-light .theme-dark) {
   --background-shading: rgba(0, 0, 0, 0.6); /* app background shading color - darker for trippy effect [default: rgba(0, 0, 0, 0.6)] */
@@ -103,7 +115,6 @@
   --muted-text: rgba(255, 255, 255, 0.85); /* muted text color [default: rgba(255, 255, 255, 0.85)] */
 }
 
-/* NOTE: Users can switch between Dark, Darker, and Midnight themes in Discord Settings > Appearance > Theme */
-/* Light theme support removed - Psychedelic Nexus is designed for dark themes only */
+/* NOTE: Users can switch between Light, Dark, Darker, and Midnight themes in Discord Settings > Appearance > Theme */
 
 /* ADD ADDITIONAL PSYCHEDELIC CSS BELOW HERE */
