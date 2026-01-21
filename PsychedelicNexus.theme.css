@@ -49,8 +49,7 @@
   --user-modal-filter: var(--background-filter); /* user modal background adjustments [default: var(--background-filter)] */
   
   /* HOME ICON - Animated Psychedelic GIF */
-  /* Replace the URL below with your own animated GIF hosted on GitHub, Imgur, or similar */
-  --home-icon: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/home-icon.gif"); /* home button animated icon - psychedelic trippy effect [default: animated GIF] */
+  --home-icon: url("https://raw.githubusercontent.com/tshives26/discord-psychedelic-nexus/main/assets/avatar2.gif"); /* home button animated icon - psychedelic trippy effect [default: animated GIF] */
   --home-size: cover; /* home button icon size [default: cover] */
   
   /* FONTS */
