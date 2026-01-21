@@ -19,6 +19,10 @@ build/
 *.tmp
 .cache/
 
-# Keep assets folder
-!assets/
-!assets/**
+# Documentation files (not for GitHub)
+GITHUB-PAGES-SETUP.md
+assets/README.md
+
+# Keep assets folder but ignore README
+assets/**
+!assets/.gitkeep
